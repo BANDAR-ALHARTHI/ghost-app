@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق اتصال فيديو جماعي</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- قسم الفيديو -->
+        <div class="video-container">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+            <div class="video-controls">
+                <button id="toggleVideoButton" title="إخفاء الفيديو">🎥</button>
+                <button id="toggleAudioButton" title="كتم الصوت">🎤</button>
+                <button id="stopCallButton" disabled>إنهاء المكالمة</button>
+            </div>
+        </div>
+
+        <!-- iframe لعرض فيديو اليوتيوب -->
+        <iframe id="youtubeFrame" style="display: none;" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+        <button id="closeYoutubeButton" style="display: none;">إغلاق الفيديو</button>
+
+        <!-- الأزرار -->
+        <div class="controls">
+            <button id="startCallButton">بدء المكالمة</button>
+            <button id="shareYoutubeButton">مشاركة رابط يوتيوب</button>
+            <button id="sendFileButton">إرسال ملف</button>
+            <button id="sendStickerButton">إرسال ملصق</button>
+        </div>
+
+        <!-- قسم الرسائل -->
+        <div class="chat">
+            <div id="messages"></div>
+            <input type="text" id="messageInput" placeholder="اكتب رسالة...">
+            <input type="file" id="fileInput" style="display: none;">
+            <button id="sendMessageButton">إرسال</button>
+        </div>
+
+        <!-- نافذة الملصقات -->
+        <div id="stickerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>اختر ملصق</h2>
+                <div class="sticker-container">
+                    <span class="sticker" data-sticker="😊">😊</span>
+                    <span class="sticker" data-sticker="😍">😍</span>
+                    <span class="sticker" data-sticker="😂">😂</span>
+                    <span class="sticker" data-sticker="😎">😎</span>
+                    <span class="sticker" data-sticker="🤩">🤩</span>
+                    <span class="sticker" data-sticker="😢">😢</span>
+                    <span class="sticker" data-sticker="😡">😡</span>
+                    <span class="sticker" data-sticker="🤗">🤗</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
